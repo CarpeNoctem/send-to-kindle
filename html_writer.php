@@ -9,6 +9,7 @@ function write_html($what, $content=FALSE) {
         case 'link_to_file':
             $valid_link = '<a href="' . htmlentities($content) . '">' . htmlentities($content) . '</a>';
             file_put_contents(LINK_FILE, $valid_link);
+            chmod(LINK_FILE, 0600);
             break;
         case 'success':
             echo '( ")b &nbsp;'; break;
